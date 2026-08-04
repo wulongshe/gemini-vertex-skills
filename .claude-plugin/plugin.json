@@ -3,6 +3,6 @@
   "description": "Vertex AI media generation skills: images (Gemini), video (Veo), speech and music (Gemini TTS / Lyria), and GCS upload",
   "version": "1.0.0",
   "author": {
-    "name": "shewulong"
+    "name": "wulongshe"
   }
 }

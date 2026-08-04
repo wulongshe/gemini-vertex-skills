@@ -16,14 +16,14 @@ Code, Codex CLI, GitHub Copilot, and any other SKILL.md-compatible agent.
 **Claude Code (plugin, recommended):**
 
 ```
-/plugin marketplace add <owner>/gemini-vertex-skills
+/plugin marketplace add wulongshe/gemini-vertex-skills
 /plugin install gemini-vertex-skills
 ```
 
 **Codex CLI / Claude Code / Copilot (copy install):**
 
 ```bash
-git clone https://github.com/<owner>/gemini-vertex-skills.git
+git clone https://github.com/wulongshe/gemini-vertex-skills.git
 cd gemini-vertex-skills
 ./install.sh codex                      # -> ~/.agents/skills/
 ./install.sh claude                     # -> ~/.claude/skills/
