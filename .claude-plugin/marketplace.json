@@ -1,0 +1,13 @@
+{
+  "name": "gemini-vertex-skills",
+  "owner": {
+    "name": "shewulong"
+  },
+  "plugins": [
+    {
+      "name": "gemini-vertex-skills",
+      "source": "./",
+      "description": "Vertex AI media generation skills: images (Gemini), video (Veo), speech and music (Gemini TTS / Lyria), and GCS upload"
+    }
+  ]
+}
