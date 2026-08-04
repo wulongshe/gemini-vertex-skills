@@ -20,17 +20,22 @@ Code, Codex CLI, GitHub Copilot, and any other SKILL.md-compatible agent.
 /plugin install gemini-vertex-skills
 ```
 
-**Codex CLI / Claude Code / Copilot (copy install):**
+**Codex CLI / Gemini CLI / Claude Code / Copilot (copy install):**
 
 ```bash
 git clone https://github.com/wulongshe/gemini-vertex-skills.git
 cd gemini-vertex-skills
 ./install.sh codex                      # -> ~/.agents/skills/
+./install.sh gemini                     # -> ~/.gemini/skills/
 ./install.sh claude                     # -> ~/.claude/skills/
 ./install.sh claude --project ~/my-app  # -> ~/my-app/.claude/skills/
 ./install.sh copilot --project ~/my-app # -> ~/my-app/.github/skills/
 ./install.sh --dir <path>               # any other SKILL.md-compatible agent
 ```
+
+Gemini CLI also treats `.agents/skills/` as an alias, so the `codex` target
+works for it too; project-level installs (`.gemini/skills/`) require the
+workspace to be trusted (`/trust`).
 
 The installer vendors the shared `common/` runtime into each skill, so
 installed skills are self-contained. Requirements: `python3`, `curl`,

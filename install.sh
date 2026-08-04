@@ -4,6 +4,7 @@
 # Usage:
 #   ./install.sh claude  [--user | --project <dir>]   # -> .claude/skills/
 #   ./install.sh codex   [--user | --project <dir>]   # -> .agents/skills/
+#   ./install.sh gemini  [--user | --project <dir>]   # -> .gemini/skills/
 #   ./install.sh copilot --project <dir>              # -> .github/skills/
 #   ./install.sh --dir <skills-dir>                   # any other agent
 #
@@ -21,7 +22,7 @@ REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 SKILLS=(gemini-image gemini-video gemini-audio gcs-upload)
 
 usage() {
-  sed -n '2,17p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'
+  sed -n '2,18p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'
   exit 1
 }
 
@@ -31,7 +32,7 @@ PROJECT=""
 TARGET=""
 while (($#)); do
   case "$1" in
-    claude|codex|copilot) AGENT="$1"; shift ;;
+    claude|codex|gemini|copilot) AGENT="$1"; shift ;;
     --user) SCOPE="user"; shift ;;
     --project) SCOPE="project"; PROJECT="${2:?--project requires a directory}"; shift 2 ;;
     --dir) TARGET="${2:?--dir requires a directory}"; shift 2 ;;
@@ -50,6 +51,8 @@ if [[ -z "$TARGET" ]]; then
     claude/project)  TARGET="$PROJECT/.claude/skills" ;;
     codex/user)      TARGET="$HOME/.agents/skills" ;;
     codex/project)   TARGET="$PROJECT/.agents/skills" ;;
+    gemini/user)     TARGET="$HOME/.gemini/skills" ;;
+    gemini/project)  TARGET="$PROJECT/.gemini/skills" ;;
     copilot/project) TARGET="$PROJECT/.github/skills" ;;
     copilot/user)    echo "Error: copilot skills are project-level; use --project <dir>" >&2; exit 1 ;;
   esac

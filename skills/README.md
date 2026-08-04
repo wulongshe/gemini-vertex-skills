@@ -14,7 +14,7 @@ gemini-vertex-skills/
 │   ├── vertex_auth.py      OAuth token minting from a service-account key
 │   ├── heartbeat.sh        progress heartbeat (TTY refresh / piped backoff)
 │   └── utils.sh            API error printer, output-path dedup, GCS upload
-├── install.sh              copy installer for Codex / Claude / Copilot / --dir
+├── install.sh              copy installer: Codex / Gemini / Claude / Copilot / --dir
 └── .env.template
 ```
 
